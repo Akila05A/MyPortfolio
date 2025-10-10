@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark theme with purple accents */
+  --background: #1a1025;
+  --foreground: #f8fafc;
+  --primary: #9333ea;
+  --primary-foreground: #1a1025;
+  --secondary: #3b0764;
+  --secondary-foreground: #e2e8f0;
+  --accent: #a855f7;
+  --accent-foreground: #1a1025;
+  --muted: #2e1065;
+  --muted-foreground: #94a3b8;
+  --card: #2e1065;
+  --card-foreground: #f1f5f9;
+  --border: #4c1d95;
+  --input: #4c1d95;
+  --ring: #9333ea;
+  
+  /* Font variables */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-heading: var(--font-sora);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #030712;  /* Darker background */
+    --foreground: #f8fafc;
+    --primary: #8b5cf6;     /* Brighter purple */
+    --primary-foreground: #ffffff;
+    --secondary: #1e1b4b;   /* Deep indigo */
+    --secondary-foreground: #e2e8f0;
+    --accent: #7c3aed;      /* Vibrant violet */
+    --accent-foreground: #ffffff;
+    --muted: #1e293b;       /* Slate background */
+    --muted-foreground: #94a3b8;
+    --card: #0f172a;        /* Deep blue-gray */
+    --card-foreground: #f1f5f9;
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: #7c3aed;
+  }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom color utilities */
+@layer utilities {
+  .bg-gradient-custom {
+    background: linear-gradient(135deg, 
+      var(--primary) 0%,
+      var(--accent) 50%,
+      var(--secondary) 100%
+    );
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Responsive typography */
+@layer base {
+  html {
+    font-size: 14px;
+    
+    @screen sm {
+      font-size: 15px;
+    }
+    
+    @screen lg {
+      font-size: 16px;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold;
+  }
+
+  p {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.animate-gradient {
+  animation: gradient 2s linear infinite;
+}
+
+.animate-gradient-slow {
+  animation: gradient 3s linear infinite;
+}
+
+.delay-75 {
+  animation-delay: 0.75s;
+}
+
+.delay-150 {
+  animation-delay: 1.5s;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(var(--card), 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--border), 0.2);
+}
+
+/* Better tap targets on mobile */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@keyframes attractive-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.animate-attractive-gradient {
+  animation: attractive-gradient 4s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:w-full {
+  width: 100%;
+}
