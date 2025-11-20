@@ -12,6 +12,7 @@ interface Project {
   image: string
   tech: string[]
   demoLink: string
+  details?: string[]
   
 }
 
@@ -22,9 +23,33 @@ interface TechIcon {
 }
 
 const projects: Project[] = [
+  {
+  name: 'Sri Lankan Currency Note Classification & Stain Detection for Visually Impaired Individuals',
+  description: 'AI-powered system for classifying Sri Lankan currency denominations and detecting stain regions with voice guidance for visually impaired users.',
+  image: 'Sri-Lankan-Currency.jpg',
+  tech: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'YOLO', 'CNN'],
+  demoLink: '#', // Add demo link or research publication link when available
+},
+
+  {
+  name: 'Smart Construction Management System (SCMS)',
+  description: 'AI-enabled construction management platform built for SAAN Excellence Engineering Pvt Ltd to automate project workflows, verify bills, and enhance project transparency.',
+  image: 'SCMS.png',
+  tech: ['Next.js', 'TypeScript', 'Django', 'PostgreSQL', 'Tailwind CSS', 'Supabase'],
+  demoLink: 'https://www.linkedin.com/feed/update/urn:li:activity:7393543261090643968/?originTrackingId=BpF5E3%2Fx4tNIaGGTriQvGA%3D%3D', // Add Vercel live link or demo video link when available
+  details: [
+    'Implemented BOQ-based project creation with dynamic workflow management.',
+    'Integrated OCR-powered bill verification using Tesseract.js to detect mismatches and automate validation.',
+    'Developed 3D and VR project walkthroughs using Three.js and A-Frame.',
+    'Built a chatbot-driven equipment rental system with automated availability tracking.',
+    'Delivered a multilingual public portfolio (English, Tamil, Sinhala) and deployed it via Vercel & Railway.'
+  ]
+},
+
+
   { 
     name: 'AutoCare Lanka',
-   description: 'Multi-role vehicle service platform with online booking, course enrollment, and job opportunities.',
+   description: 'Developed a vehicle service platform supporting online bookings, course enrollment, and job listings. Includes real-time scheduling, role-based access for admins, service providers, and customers, and integrated modules for training courses and job opportunities.',
    image: 'autocare.png',
    tech: ['React', 'Bootstrap', 'PHP', 'MySQL'],
    demoLink: 'https://www.linkedin.com/feed/update/urn:li:activity:7322264860765949952/',  // Replace with your live demo URL if available
@@ -290,14 +315,14 @@ export default function Projects() {
   const hasMoreProjects = visibleProjects < projects.length
 
     return (
-    <section className="py-20 relative bg-[#1a1025] overflow-hidden" id="projects" ref={containerRef}>
+    <section className="py-20 relative bg-[#1a1025] overflow-hidden px-4 sm:px-6 lg:px-8" id="projects" ref={containerRef}>
       {/* Background Effects */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-[#2e1065]/50 to-purple-900/20"
         style={{ y }}
       />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -315,7 +340,7 @@ export default function Projects() {
 
         {/* Tech Stack Grid */}
         <motion.div 
-          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-4 sm:gap-6 mb-12 md:mb-20"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 sm:gap-6 mb-12 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -336,7 +361,7 @@ export default function Projects() {
         {hasMoreProjects && (
           <div className="flex justify-center">
             <motion.button
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:from-pink-500 hover:to-purple-600 transition-all duration-300 text-lg flex items-center gap-3 group"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:from-pink-500 hover:to-purple-600 transition-all duration-300 text-lg flex items-center justify-center gap-3 group w-full sm:w-auto"
               onClick={handleViewMore}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

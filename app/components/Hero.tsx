@@ -140,7 +140,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex flex-col justify-center relative overflow-visible md:overflow-hidden bg-[#0A0A0B] pt-16"
+      className="min-h-screen flex flex-col justify-center relative overflow-visible md:overflow-hidden bg-[#0A0A0B] pt-16 px-4 sm:px-6"
     >
       {/* Gradient overlay */}
       <motion.div 
@@ -152,11 +152,11 @@ const Hero = () => {
       <Particles options={particlesOptions} className="absolute inset-0" />
       
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-center min-h-[70vh] relative z-10 max-w-[1100px] w-full gap-12">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center min-h-[70vh] relative z-10 max-w-[1100px] w-full gap-12">
         {/* Text Section */}
         <div className="flex flex-col items-center lg:items-start justify-center w-full max-w-2xl">
           <motion.div 
-            className="w-full max-w-4xl mx-auto text-center"
+            className="w-full max-w-4xl mx-auto text-center lg:text-left px-2 sm:px-4"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -165,7 +165,7 @@ const Hero = () => {
 
             {/* Name */}
             <motion.h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-space-grotesk tracking-tight text-center"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-space-grotesk tracking-tight text-center lg:text-left"
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -177,7 +177,7 @@ const Hero = () => {
 
             {/* Title */}
             <motion.div 
-              className="text-xl sm:text-2xl md:text-3xl font-medium font-sora mb-10 text-center"
+              className="text-xl sm:text-2xl md:text-3xl font-medium font-sora mb-10 text-center lg:text-left"
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -201,7 +201,7 @@ const Hero = () => {
 
             {/* Animated Typewriter Text */}
             <motion.div
-              className="mt-6 mb-10 text-lg text-cyan-300 font-semibold font-inter max-w-2xl mx-auto text-center min-h-[32px]"
+              className="mt-6 mb-10 text-lg text-cyan-300 font-semibold font-inter max-w-2xl mx-auto lg:mx-0 text-center lg:text-left min-h-[32px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
@@ -221,42 +221,42 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-wrap gap-8 mb-8 justify-center"
+              className="flex flex-col sm:flex-row w-full max-w-2xl mx-auto lg:mx-0 gap-4 sm:gap-6 md:gap-8 mb-8 justify-center lg:justify-start items-stretch sm:items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.1 }}
             >
               <a
-                className="group inline-flex items-center gap-2 font-semibold text-lg bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 bg-clip-text text-transparent transition-all duration-200 cursor-pointer relative"
                 onClick={() => {
                   const projectsSection = document.getElementById('projects');
                   if (projectsSection) {
                     projectsSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
+                className="group inline-flex items-center gap-2 font-semibold text-lg bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 bg-clip-text text-transparent transition-all duration-200 cursor-pointer relative w-full sm:w-auto justify-center"
               >
                 <Briefcase size={20} className="text-cyan-400" />
                 <span>View My Work</span>
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a
-                className="group inline-flex items-center gap-2 font-semibold text-lg bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 bg-clip-text text-transparent transition-all duration-200 cursor-pointer relative"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
                     contactSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
+                className="group inline-flex items-center gap-2 font-semibold text-lg bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 bg-clip-text text-transparent transition-all duration-200 cursor-pointer relative w-full sm:w-auto justify-center"
               >
                 <Mail size={20} className="text-cyan-400" />
                 <span>Contact Me</span>
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a
-                className="group inline-flex items-center gap-2 font-semibold text-lg bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 bg-clip-text text-transparent transition-all duration-200 cursor-pointer relative"
                 onClick={() => {
                   window.open('/MyCv.pdf', '_blank');
                 }}
+                className="group inline-flex items-center gap-2 font-semibold text-lg bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 bg-clip-text text-transparent transition-all duration-200 cursor-pointer relative w-full sm:w-auto justify-center"
               >
                 <Download size={20} className="text-cyan-400" />
                 <span>Download CV</span>
@@ -266,7 +266,7 @@ const Hero = () => {
 
             {/* Contact Info */}
             <motion.div 
-              className="flex items-center justify-center space-x-8 mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-8 mb-6 text-sm sm:text-base w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
@@ -293,7 +293,7 @@ const Hero = () => {
 
             {/* Social Links */}
             <motion.div 
-              className="flex items-center justify-center space-x-8 mb-10"
+              className="flex items-center justify-center lg:justify-start flex-wrap gap-6 sm:gap-8 mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
@@ -318,7 +318,7 @@ const Hero = () => {
           </motion.div>
         </div>
         {/* Photo Section (right side, plain) */}
-        <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-auto mt-8 lg:mt-0">
+        <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-auto mt-8 lg:mt-0 max-w-sm sm:max-w-md mx-auto lg:mx-0">
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 3, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}

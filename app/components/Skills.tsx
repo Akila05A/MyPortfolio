@@ -130,7 +130,7 @@ const TechnologyIcon = ({ tech, index }: { tech: { icon: any; name: string; colo
 
 export default function Skills() {
   return (
-    <section className="py-24 sm:py-32 relative bg-[#1a1025] text-gray-100 overflow-hidden" id="skills">
+    <section className="py-24 sm:py-32 relative bg-[#1a1025] text-gray-100 overflow-hidden px-4 sm:px-6 lg:px-8" id="skills">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
@@ -178,7 +178,7 @@ export default function Skills() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -232,7 +232,7 @@ export default function Skills() {
         >
           <h3 className="text-2xl font-bold text-white text-center mb-8">Technologies I Work With</h3>
           
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
             {[
               { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
               { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },

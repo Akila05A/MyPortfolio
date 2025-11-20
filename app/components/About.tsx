@@ -93,8 +93,8 @@ export default function About() {
   }, [])
 
   return (
-    <section className="py-20 relative bg-[#1a1025] text-gray-100 overflow-hidden" id="about">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+    <section className="py-16 sm:py-20 relative bg-[#1a1025] text-gray-100 overflow-hidden px-4 sm:px-6" id="about">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Animated Heading */}
         <motion.h2 
           className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-shimmer"
@@ -140,18 +140,22 @@ export default function About() {
 
         {/* Description with fade/slide-in - Centered */}
         <motion.div
-          className="text-base sm:text-lg text-white max-w-4xl mx-auto text-center"
+          className="text-base sm:text-lg text-white max-w-4xl mx-auto text-left sm:text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.7 }}
         >
-          <p className="leading-relaxed">
-          I am an undergraduate in Computer Science & Technology at Uva Wellassa University of Sri Lanka (Class of 2026), with a strong foundation in full-stack development and a passion for creating innovative digital solutions. My technical skill set includes Java, C, JavaScript, Python, HTML, CSS, React, JSP, PHP, and Android Studio, enabling me to build both web and mobile applications that are efficient, scalable, and user-focused.
-
-I am particularly driven by solving real-world problems through technology and take pride in delivering clean, maintainable code and intuitive user experiences. My involvement in the university chess team has also sharpened my analytical and strategic thinking, qualities I bring into every development project.
-
-I'm always open to new challenges, collaborations, and opportunities to grow as a developer and problem solver.
-          </p>
+          <div className="space-y-4 leading-relaxed">
+            <p>
+              I am an undergraduate in Computer Science & Technology at Uva Wellassa University of Sri Lanka (Class of 2026), with a strong foundation in full-stack development and a passion for creating innovative digital solutions. My technical skill set includes Java, C, JavaScript, Python, HTML, CSS, React, JSP, PHP, and Android Studio, enabling me to build both web and mobile applications that are efficient, scalable, and user-focused.
+            </p>
+            <p>
+              I am particularly driven by solving real-world problems through technology and take pride in delivering clean, maintainable code and intuitive user experiences. My involvement in the university chess team has also sharpened my analytical and strategic thinking, qualities I bring into every development project.
+            </p>
+            <p>
+              I'm always open to new challenges, collaborations, and opportunities to grow as a developer and problem solver.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

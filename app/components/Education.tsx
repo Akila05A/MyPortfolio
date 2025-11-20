@@ -35,8 +35,8 @@ const EducationCard = ({ education, index }: { education: EducationItem; index: 
     >
       <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl opacity-25 group-hover:opacity-75 blur transition duration-300" />
       <div className="relative bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
-        <div className="flex items-start space-x-4">
-          <div className="p-3 rounded-lg bg-gradient-to-br from-blue-600/20 to-indigo-600/20">
+        <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+          <div className="p-3 rounded-lg bg-gradient-to-br from-blue-600/20 to-indigo-600/20 w-fit">
             <FaGraduationCap className="w-6 h-6 text-blue-400" />
           </div>
           <div className="flex-1">
@@ -53,7 +53,7 @@ const EducationCard = ({ education, index }: { education: EducationItem; index: 
 
 export default function Education() {
   return (
-    <section className="py-24 sm:py-32 relative bg-[#0F0F23] text-gray-100 overflow-hidden" id="education">
+    <section className="py-24 sm:py-32 relative bg-[#0F0F23] text-gray-100 overflow-hidden px-4 sm:px-6 lg:px-8" id="education">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
@@ -101,7 +101,7 @@ export default function Education() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
