@@ -63,6 +63,7 @@ const projects: Project[] = [
     demoLink: 'https://www.linkedin.com/feed/update/urn:li:activity:7320711255818735616/',  // Replace with your deployed site URL if available
     
   },
+  
   {
     name: 'ArtOfCake',
     description: 'Built with HTML, CSS, JavaScript, and Bootstrap. Responsive design with interactive UI and clean visuals.',
